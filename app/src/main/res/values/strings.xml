@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">NeRecipe</string>
+    <string name="plug_text">Что готовим сегодня?</string>
+    <string name="europa">Европейская</string>
+    <string name="asia">Азиатская</string>
+    <string name="pan_asia">Паназиатская</string>
+    <string name="east">Восточная</string>
+    <string name="american">Американская</string>
+    <string name="russian">Русская</string>
+    <string name="median_sea">Средиземноморская</string>
+    <string name="search_hint">Поиск рецептов по названию</string>
+    <string name="dialog_exit_recipe_edit_step_null">Все шаги удалены!\nВ случае подтверждения рецепт будет удален.\nПри отмене шаги будут восстановлены\nВыйти?</string>
+    <string name="dialog_exit_recipe_edit">Сохранить перед закрытием?</string>
+    <string name="dialog_exit_recipe_create">Сохранить рецепт?</string>
+    <string name="dialog_yes">Да</string>
+    <string name="dialog_no">Нет</string>
+</resources>

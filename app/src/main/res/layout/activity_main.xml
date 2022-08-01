@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MainActivity">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinator_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/blue_300">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/container_search_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top">
+
+            <SearchView
+                android:id="@+id/search_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:iconifiedByDefault="false"
+                android:inputType="textNoSuggestions"
+                android:theme="@style/AppSearchView"/>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycle_recipe"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom"
+            android:paddingTop="50dp"
+            android:paddingBottom="60dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_anchor="@id/container_search_view"
+            app:layout_anchorGravity="bottom">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <ImageView
+            android:id="@+id/plug_icon"
+            android:layout_width="256dp"
+            android:layout_height="256dp"
+            android:layout_gravity="center"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/ic_plug_plate" />
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottom_app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:gravity="bottom"
+            app:backgroundTint="@color/blue_700"
+            app:fabAlignmentMode="center"
+            app:navigationIcon="@drawable/filter_24"
+            app:navigationIconTint="@color/text_color"
+            android:theme="@style/Theme.App"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_add"
+            app:backgroundTint="@color/blue_500"
+            app:layout_anchor="@id/bottom_app_bar" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bottom_sheet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/blue_500"
+            android:elevation="10dp"
+            android:paddingBottom="20dp"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+            tools:visibility="gone">
+
+            <TextView
+                android:id="@+id/text_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quick_sand_bolt"
+                android:text="Кухни мира:"
+                android:textColor="@color/text_color"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/separator_line"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@color/blue_700"
+                app:layout_constraintTop_toBottomOf="@id/text_filter" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_pan_asia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="40dp"
+                android:checkable="true"
+                android:checked="true"
+                android:text="@string/pan_asia"
+                android:textColor="@color/text_color"
+                app:chipBackgroundColor="@color/selector_chips"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/chip_europa" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_russian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:checked="true"
+                android:text="@string/russian"
+                android:textColor="@color/text_color"
+                android:textColorHint="@color/text_color"
+                app:chipBackgroundColor="@color/selector_chips"
+                app:layout_constraintEnd_toEndOf="@+id/chip_asia"
+                app:layout_constraintTop_toTopOf="@+id/chip_middle_sea" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_american"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:checkable="true"
+                android:checked="true"
+                android:text="@string/american"
+                android:textColor="@color/text_color"
+                android:textColorHint="@color/text_color"
+                app:chipBackgroundColor="@color/selector_chips"
+                app:layout_constraintStart_toStartOf="@+id/chip_europa"
+                app:layout_constraintTop_toBottomOf="@+id/chip_europa" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_middle_sea"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:checkable="true"
+                android:checked="true"
+                android:text="@string/median_sea"
+                android:textColor="@color/text_color"
+                android:textColorHint="@color/text_color"
+                app:chipBackgroundColor="@color/selector_chips"
+                app:layout_constraintStart_toStartOf="@+id/chip_american"
+                app:layout_constraintTop_toBottomOf="@+id/chip_american" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_east"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:checkable="true"
+                android:checked="true"
+                android:text="@string/east"
+                android:textColor="@color/text_color"
+                android:textColorHint="@color/text_color"
+                app:chipBackgroundColor="@color/selector_chips"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/separator_line" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_asia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:checked="true"
+                android:text="@string/asia"
+                android:textColor="@color/text_color"
+                android:textColorHint="@color/text_color"
+                app:chipBackgroundColor="@color/selector_chips"
+                app:layout_constraintEnd_toEndOf="@+id/chip_pan_asia"
+                app:layout_constraintTop_toTopOf="@+id/chip_american" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_europa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="8dp"
+                android:checkable="true"
+                android:checked="true"
+                android:text="@string/europa"
+                android:textColor="@color/text_color"
+                android:textColorHint="@color/text_color"
+                app:chipBackgroundColor="@color/selector_chips"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/chip_east" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_hide_sheet"
+                style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="4dp"
+                app:icon="@drawable/ic_down_arrow"
+                app:iconGravity="top"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

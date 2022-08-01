@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/blue_700"
+    android:backgroundTint="@color/blue_300"
+    app:cardBackgroundColor="@color/blue_300">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="2dp"
+        android:background="@color/blue_100">
+
+        <TextView
+            android:id="@+id/text_name_author"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/quick_sand_light"
+            android:paddingStart="10dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:textColor="@color/text_color"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@+id/text_title_recipe"
+            app:layout_constraintEnd_toEndOf="@+id/text_title_recipe"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Денис Бобровский" />
+
+        <TextView
+            android:id="@+id/text_title_recipe"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/quick_sand_bolt"
+            android:inputType="textMultiLine|textNoSuggestions"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textColor="@color/text_color"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textIsSelectable="false"
+            app:layout_constraintBottom_toTopOf="@+id/text_category"
+            app:layout_constraintEnd_toStartOf="@+id/button_menu_recipe"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Тайский суп Том-Ям" />
+
+        <TextView
+            android:id="@+id/text_category"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/quick_sand_light"
+            android:gravity="center_vertical"
+            android:paddingStart="10dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:textColor="@color/text_color"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/switch_favorite"
+            app:layout_constraintStart_toStartOf="@+id/text_title_recipe"
+            app:layout_constraintTop_toTopOf="@+id/switch_favorite"
+            tools:text="Украинская кухня" />
+
+        <Button
+            android:id="@+id/button_menu_recipe"
+            style="@style/Widget.App.Button.OutlinedButton.IconOnly.Menu"
+            android:layout_width="40dp"
+            android:layout_height="37dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="4dp"
+            android:background="#00FFFFFF"
+            app:icon="@drawable/ic_menu_recipe_card"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch_favorite"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:fontFamily="@font/quick_sand_light"
+            android:shadowColor="@color/blue_300"
+            android:textColor="@color/text_color"
+            android:textSize="12sp"
+            android:thumb="@drawable/switch_favorite_selector"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:showText="false"
+            app:thumbTint="@color/blue_700"
+            app:trackTint="@color/blue_300"
+            app:trackTintMode="multiply" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_300"
+    tools:context=".ui.CreateAndEditActivity">
+
+    <EditText
+        android:id="@+id/text_author"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Автор рецепта"
+        android:inputType="textMultiLine"
+        android:textColor="@color/text_color"
+        android:textColorHighlight="@color/text_color"
+        android:textColorHint="#802A363B"
+        android:textColorLink="@color/text_color"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/text_category_recipe"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="4dp"
+        android:background="@color/blue_300"
+        android:backgroundTint="@color/blue_300"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/title_recipe"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/text_author"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_height="20dp" />
+
+    <EditText
+        android:id="@+id/title_recipe"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Название рецепта"
+        android:inputType="textMultiLine"
+        android:maxLines="10"
+        android:textColor="@color/text_color"
+        android:textColorHighlight="@color/text_color"
+        android:textColorHint="#802A363B"
+        android:textColorLink="@color/text_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_author" />
+
+    <TextView
+        android:id="@+id/text_action_step"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Создание нового шага"
+        android:textColor="@color/text_color"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="@+id/text_step"
+        app:layout_constraintStart_toStartOf="@+id/text_step"
+        app:layout_constraintTop_toBottomOf="@+id/title_recipe" />
+
+    <EditText
+        android:id="@+id/text_step"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Описание шага"
+        android:inputType="textMultiLine"
+        android:maxLines="10"
+        android:textColor="@color/text_color"
+        android:textColorHighlight="@color/text_color"
+        android:textColorHint="#802A363B"
+        android:textColorLink="@color/text_color"
+        app:layout_constraintEnd_toStartOf="@+id/save_step_recipe"
+        app:layout_constraintStart_toEndOf="@+id/add_image"
+        app:layout_constraintTop_toBottomOf="@+id/text_action_step" />
+
+    <Button
+        android:id="@+id/save_step_recipe"
+        style="@style/Widget.App.Button.OutlinedButton.IconOnly.Menu"
+        android:layout_width="40dp"
+        android:layout_height="0dp"
+        android:background="@color/blue_500"
+        android:backgroundTint="@color/blue_500"
+        app:icon="@drawable/add_one_step"
+        app:iconTint="@color/blue_700"
+        app:layout_constraintBottom_toBottomOf="@+id/text_step"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/text_step" />
+
+    <Button
+        android:id="@+id/update_step_recipe"
+        style="@style/Widget.App.Button.OutlinedButton.IconOnly.Menu"
+        android:layout_width="40dp"
+        android:layout_height="0dp"
+        android:background="@color/blue_500"
+        android:backgroundTint="@color/blue_500"
+        app:icon="@drawable/ic_step_update"
+        app:iconTint="@color/blue_700"
+        app:layout_constraintBottom_toBottomOf="@+id/text_step"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/text_step" />
+
+    <ImageButton
+        android:id="@+id/add_image"
+        android:layout_width="47dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="2dp"
+        android:background="@drawable/add_image"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/text_step"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/text_step" />
+
+    <TextView
+        android:id="@+id/color_barrier"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="4dp"
+        android:background="@color/blue_100"
+        android:backgroundTint="@color/blue_100"
+        app:layout_constraintBottom_toTopOf="@id/barrier2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_step" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="text_step,save_step_recipe,text_category_recipe,title_recipe,color_barrier,update_step_recipe"
+        tools:layout_editor_absoluteY="150dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerStep"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/barrier2" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/button_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/blue_700"
+        android:clickable="true"
+        android:tint="@color/blue_700"
+        app:backgroundTint="@color/blue_700"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_save_add" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/button_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/blue_700"
+        android:clickable="true"
+        android:tint="@color/blue_700"
+        app:backgroundTint="@color/blue_700"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_edit_recipe" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_new_step"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="text_step,save_step_recipe,add_image,text_action_step"
+        tools:visibility="visible" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
